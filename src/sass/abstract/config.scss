@@ -1,0 +1,13 @@
+@use './color.scss' as *;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  background-color: $primary-background-color;
+}
+li{
+  list-style: none;
+}

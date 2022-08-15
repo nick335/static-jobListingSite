@@ -1,0 +1,91 @@
+@use '../abstract/color.scss' as *;
+@use '../abstract/mediaquery.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+@media #{$media-mobile-sm}{
+  .main{
+    width: 90%;
+  
+    .search-input{
+      padding: 1.2rem 1.4rem;
+      margin-top: -40px;
+
+      .inputs-div{
+        gap: 1rem
+      }
+      .input-div{
+
+        h3{
+          font-size: 15px
+        }
+      }
+    }
+    
+    .job{
+      @include flexColumn;
+      padding:1rem 1.3rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      &-info{
+        @include flexColumn;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &_imgDiv{
+
+          &-img{
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            margin-top: -40px;
+          }
+        }
+        &_infoDiv{
+          padding-left: 0rem;
+          padding-top: 7px;
+          width: 100%;
+          border-bottom: 0.2px solid $secondary-text-color;
+          
+          &-company{
+            margin-bottom: 13px;
+            &-header{
+              font-size: 15px;
+            }
+            &-new{
+              margin-left: 1.5rem;
+              margin-right: 0.5rem;
+            }
+          }
+          &-role{
+
+            &-header{
+              font-size: 15px;
+            }
+          }
+          &-nature{
+            margin-bottom: 1.3rem;
+            &-lists{
+
+              .list{
+                font-size: 15px;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+      &-skills{
+        margin-top: 1rem;
+        flex-flow: wrap;
+        ga
+        &_div{
+
+          h3{
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

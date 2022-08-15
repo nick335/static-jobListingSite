@@ -1,0 +1,13 @@
+@use '../abstract/mediaquery.scss' as *;
+
+@media #{$media-desktop}{
+  .header{
+    height: 110px;
+  }
+}
+@media #{$media-mobile-sm}{
+  .header{
+    background-image: url('../../images/bg-header-mobile.svg');
+    height: 150px;
+  }
+}

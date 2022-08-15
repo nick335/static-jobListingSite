@@ -1,0 +1,237 @@
+@use '../abstract/color.scss' as *;
+@use '../abstract/font.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+.main{
+  width: 84%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .search-input{
+    width: 100%;
+    background-color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 5px;
+    box-shadow: rgba($color: $primary-text-color, $alpha:0.2) 0px 3px 4px;
+    z-index: 10;
+    margin-top: -30px;
+    @include flexSpaceBetween;
+    align-items: center;
+
+    .inputs-div{
+      @include flex;
+      gap: 1.4rem;
+      flex-flow: wrap
+    }
+    .input-div{
+      @include flex;
+      align-items: center;
+      background-color: $secondary-background-color;
+      border-radius: 3px;
+      mix-blend-mode: normal;
+      cursor: pointer;
+      max-width: 80%;
+
+      h3{
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 9px;
+        padding-top: 7px;
+        color: $primary-text-color;
+      }
+      .icon{
+        background-color: $primary-text-color;
+        padding: 5px 9px;
+        color: white;
+        font-size: 18px;
+
+        @media(hover: hover){
+          &:hover{
+            background-color: $tertiary-text-color;
+            transition: all 0.1s ease-out;
+          }
+        }
+      }
+
+    }
+    .clear-div{
+
+      h4{
+        color: $primary-text-color;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 700;
+        position: relative;
+
+        &:after{
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0px;
+          width: 0px;
+          height: 1.5px;
+          background: $primary-text-color;
+          transition: all 0.45s;
+        }
+
+        @media(hover : hover){
+          &:hover:after{
+            width: 100%;
+            left: 0;
+          }
+        }  
+      }
+    }
+  }
+  .jobs{
+    margin-top: 4rem;
+  }
+  .job{
+    margin-bottom: 2rem;
+    @include flexSpaceBetween;
+    font-family: $primary-font;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: rgba($color: $primary-text-color, $alpha:0.2) 0px 3px 4px;
+    
+    &-info{
+      @include flex;
+      align-items: flex-start;
+
+      &_imgDiv{
+
+        &-img{
+          cursor: pointer;
+        }
+      }
+
+      &_infoDiv{
+        padding-left: 1.5rem;
+        padding-top: 5px;
+        height: auto;
+
+        &-company{
+          @include flex;
+          // gap: 1rem;
+          margin-bottom: 13px;
+
+          &-header,&-new,&-featured{
+            color: $primary-text-color;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+          }
+          &-new, &-featured{
+            text-transform: uppercase;
+            font-size: 12px;
+            padding: 5px 9px;
+            padding-top: 8px;
+            border-radius: 20px;
+          }
+          &-new{
+            background-color: $primary-text-color;
+            color: white;
+            margin-left: 1rem;
+            margin-right: 0.3rem;
+          }
+          &-featured{
+            background-color: $tertiary-text-color;
+            color: white;
+          }
+        }
+        &-role{
+          &-header{
+            color: $tertiary-text-color;
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+
+            @media(hover: hover){
+
+              &:hover{
+                color: $primary-text-color;
+                transition: color 0.1s ease-out;
+              }
+            }
+          }
+        }
+        &-nature{
+          padding-top: 13px;
+          
+          &-lists{
+            @include flex;
+            align-items: center;
+            gap: 1.4rem;
+
+            .list{
+              font-size: 16px;
+              color: $secondary-text-color;
+              cursor: pointer;
+              @include flex;
+              align-items: center;
+              
+              justify-content: center;
+              position: relative;
+
+              p{
+                padding-left: 0.5rem;
+                position: absolute;
+                font-size: 25px;
+                top: -65%;
+                right: -16px;
+                // z-index: 60;
+                // color: red;
+                // background-color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-skills{
+      @include flex;
+      gap: 1rem;
+
+      &_div{
+        background-color: $secondary-background-color;
+        border-radius: 3px;
+        mix-blend-mode: normal;
+        cursor: pointer;
+
+        @media(hover: hover){
+
+          &:hover{
+            background-color: $primary-text-color;
+            transition: all 0.1s ease-in;
+
+            h3{
+              color: white;
+              transition: color 0.1s ease-out;
+            }
+          }
+        }
+
+        h3{
+          font-size: 14px;
+          font-weight: 700;
+          padding: 7px 9px;
+          padding-top: 7px;
+          color: $primary-text-color;
+        }
+      }
+      &_div.selected{
+        background-color: $primary-text-color;
+
+        h3{
+          color: white;
+        }
+      }
+    }
+  }
+  .border-left{
+    border-left: 4px solid $primary-text-color;
+    box-shadow: rgba($color: $primary-text-color, $alpha:0.2) 0px 3px 18px;
+  }
+}
